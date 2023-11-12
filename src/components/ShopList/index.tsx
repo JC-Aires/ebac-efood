@@ -12,12 +12,13 @@ const ShopList = ({ restaurants }: Props) => (
     <List>
       {restaurants.map((restaurante) => (
         <Shop
-          // highlight="Destaque da Semana"
           key={restaurante.id}
           type={restaurante.type}
           name={restaurante.name}
           description={restaurante.description}
           image={restaurante.image}
+          nota={restaurante.nota}
+          id={restaurante.id}
         />
       ))}
     </List>
