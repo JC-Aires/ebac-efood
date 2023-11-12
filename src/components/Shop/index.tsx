@@ -4,7 +4,8 @@ import {
   Card,
   Nome,
   Nota,
-  TituloContainer
+  TituloContainer,
+  Infos
 } from './styles'
 import Tag from '../Tag'
 import Button from '../Button'
@@ -17,12 +18,17 @@ type Props = {
   image: string
   nota: number
   id: number
+  infos: string[]
 }
 
-const Shop = ({ type, name, description, image, nota }: Props) => (
+const Shop = ({ type, name, description, image, nota, infos }: Props) => (
   <Card>
     <img src={image} alt={type} />
-    <Tag>{type}</Tag>
+    <Infos>
+      {infos.map((info) => (
+        <Tag key={info}>{info}</Tag>
+      ))}
+    </Infos>
     <Container>
       <TituloContainer>
         <Nome>{name}</Nome>

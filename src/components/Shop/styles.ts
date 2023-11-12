@@ -11,11 +11,11 @@ export const Card = styled.div`
   flex-direction: column;
   position: relative;
 
-  ${TagContainer} {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
+  // ${TagContainer} {
+  //   position: absolute;
+  //   top: 16px;
+  //   right: 16px;
+  // }
 `
 
 export const Nome = styled.h2`
@@ -62,4 +62,10 @@ export const Nota = styled.div`
     margin-left: 8px;
     margin-right: 8px;
   }
+`
+
+export const Infos = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
 `

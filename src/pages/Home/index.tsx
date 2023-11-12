@@ -13,7 +13,8 @@ const shops: Restaurant[] = [
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
     nota: 4.5,
-    id: 1
+    id: 1,
+    infos: ['Destaque da Semana', 'Japonesa']
   },
   {
     type: 'Italiana',
@@ -22,7 +23,8 @@ const shops: Restaurant[] = [
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     image: massa,
     nota: 4.8,
-    id: 2
+    id: 2,
+    infos: ['Italiana']
   },
   {
     type: 'Japonesa',
@@ -31,7 +33,8 @@ const shops: Restaurant[] = [
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
     nota: 4.5,
-    id: 3
+    id: 3,
+    infos: ['Japonesa']
   },
   {
     type: 'Japonesa',
@@ -40,7 +43,8 @@ const shops: Restaurant[] = [
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
     nota: 4.5,
-    id: 4
+    id: 4,
+    infos: ['Japonesa']
   },
   {
     type: 'Japonesa',
@@ -49,7 +53,8 @@ const shops: Restaurant[] = [
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
     nota: 4.5,
-    id: 5
+    id: 5,
+    infos: ['Japonesa']
   },
   {
     type: 'Japonesa',
@@ -58,7 +63,8 @@ const shops: Restaurant[] = [
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
     nota: 4.5,
-    id: 6
+    id: 6,
+    infos: ['Japonesa']
   }
 ]
 

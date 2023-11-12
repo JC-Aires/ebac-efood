@@ -19,6 +19,7 @@ const ShopList = ({ restaurants }: Props) => (
           image={restaurante.image}
           nota={restaurante.nota}
           id={restaurante.id}
+          infos={restaurante.infos}
         />
       ))}
     </List>
