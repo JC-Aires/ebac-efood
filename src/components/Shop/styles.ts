@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
   background-color: ${cores.branca};
@@ -10,12 +9,6 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-
-  // ${TagContainer} {
-  //   position: absolute;
-  //   top: 16px;
-  //   right: 16px;
-  // }
 `
 
 export const Nome = styled.h2`
