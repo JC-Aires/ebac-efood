@@ -10,6 +10,7 @@ import {
 import Tag from '../Tag'
 import Button from '../Button'
 import star from '../../assets/images/star.svg'
+import { MenuItemsType } from '../../pages/Perfil'
 
 type Props = {
   type: string
@@ -19,9 +20,11 @@ type Props = {
   nota: number
   id: number
   infos: string[]
+  destacado: boolean
+  cardapio: MenuItemsType[]
 }
 
-const Shop = ({ type, name, description, image, nota, infos }: Props) => (
+const Shop = ({ type, name, description, image, nota, infos, id }: Props) => (
   <Card>
     <img src={image} alt={type} />
     <Infos>
@@ -38,7 +41,7 @@ const Shop = ({ type, name, description, image, nota, infos }: Props) => (
         </Nota>
       </TituloContainer>
       <Descricao>{description}</Descricao>
-      <Button type={'link'} to={'/perfil'} title={'name'}>
+      <Button type={'link'} to={`/perfil/${id}`} title={'name'}>
         Saiba mais
       </Button>
     </Container>

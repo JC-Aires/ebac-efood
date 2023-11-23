@@ -1,15 +1,20 @@
-import { Imagem, Tipo, Titulo } from './styles'
-import sushi from '../../assets/images/sushi.png'
+import { ImageHeader, ShopName, Tipo } from './styles'
+import { MenuType } from '../../pages/Perfil'
 
-const Banner = () => (
-  <>
-    <Imagem style={{ backgroundImage: `url(${sushi})` }}>
-      <div className="container">
-        <Tipo>Japonesa</Tipo>
-        <Titulo>Hioki Sushi</Titulo>
-      </div>
-    </Imagem>
-  </>
+type Props = {
+  restaurant: MenuType
+}
+
+const Banner = ({ restaurant }: Props) => (
+  <ImageHeader>
+    <img src={restaurant.capa} alt="Imagem header" />
+    <div className="container">
+      <Tipo>
+        {restaurant?.tipo?.charAt(0).toUpperCase() + restaurant?.tipo?.slice(1)}
+      </Tipo>
+      <ShopName>{restaurant.titulo}</ShopName>
+    </div>
+  </ImageHeader>
 )
 
 export default Banner

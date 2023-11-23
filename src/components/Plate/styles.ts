@@ -21,7 +21,7 @@ export const Card = styled.div`
   }
 `
 
-export const Nome = styled.h2`
+export const Nome = styled.h3`
   font-size: 18px;
   font-weight: bold;
   line-height: 21px;
@@ -29,13 +29,6 @@ export const Nome = styled.h2`
   display: block;
   color: ${cores.creme};
 `
-
-// export const Container = styled.div`
-//   border: 1px solid ${cores.vermelho};
-//   border-top: none;
-//   width: 472px;
-//   height: 181px;
-// `
 
 export const Descricao = styled.p`
   display: block;
@@ -80,13 +73,6 @@ export const ModalContent = styled.div`
   padding: 32px;
   background-color: ${cores.vermelho};
 
-  h4 {
-    color: ${cores.branca};
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 21px;
-  }
-
   img {
     width: 280px;
     height: 280px;
@@ -100,5 +86,42 @@ export const ModalContent = styled.div`
     position: absolute;
     top: 8px;
     right: -16px;
+    cursor: pointer;
+  }
+`
+
+export const TextContainer = styled.div`
+  p {
+    display: flex;
+    color: ${cores.branca};
+    text-align: center;
+    top: 0;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  div {
+    color: ${cores.branca};
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 16px;
+    margin-right: 32px;
+
+  button {
+    // width: 230px;
+    // height: 24px;
+    // flex-shrink: 0;
+    border: none;
+    background-color: ${cores.vermelho};
+    color: ${cores.vermelho};
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `

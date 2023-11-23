@@ -5,10 +5,15 @@ export const Card = styled.div`
   background-color: ${cores.branca};
   width: 472px;
   height: 398px;
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 68px;
+  display: grid;
   position: relative;
+
+  img {
+    width: 100%;
+    height: 216px;
+    object-fit: cover;
+  }
 `
 
 export const Nome = styled.h2`
@@ -22,8 +27,11 @@ export const Nome = styled.h2`
 export const Container = styled.div`
   border: 1px solid ${cores.vermelho};
   border-top: none;
+  background-color: ${cores.branca};
   width: 472px;
-  height: 181px;
+  height: 206px;
+  display: flex;
+  flex-direction: column;
 `
 
 export const TituloContainer = styled.div`
@@ -38,7 +46,7 @@ export const Descricao = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  padding: 16px 8px;
+  margin: 16px 8px;
 `
 
 export const Nota = styled.div`

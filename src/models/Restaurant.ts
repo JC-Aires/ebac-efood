@@ -6,6 +6,8 @@ class Restaurant {
   id: number
   nota: number
   infos: string[]
+  cardapio: string[]
+  destacado: boolean
 
   constructor(
     type: string,
@@ -14,7 +16,9 @@ class Restaurant {
     image: string,
     id: number,
     nota: number,
-    infos: string[]
+    infos: string[],
+    cardapio: string[],
+    destacado: boolean
   ) {
     this.id = id
     this.type = type
@@ -23,6 +27,8 @@ class Restaurant {
     this.image = image
     this.nota = nota
     this.infos = infos
+    this.cardapio = cardapio
+    this.destacado = destacado
   }
 }
 

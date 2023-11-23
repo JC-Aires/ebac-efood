@@ -1,29 +1,49 @@
-import Restaurant from '../../models/Restaurant'
+// import Restaurant from '../../models/Restaurant'
+import { RestaurantType } from '../../pages/Home'
 import Shop from '../Shop'
 
 import { ContainerShops, List } from './styles'
 
 type Props = {
-  restaurants: Restaurant[]
+  restaurants: RestaurantType[]
 }
 
-const ShopList = ({ restaurants }: Props) => (
-  <ContainerShops>
-    <List>
-      {restaurants.map((restaurante) => (
-        <Shop
-          key={restaurante.id}
-          type={restaurante.type}
-          name={restaurante.name}
-          description={restaurante.description}
-          image={restaurante.image}
-          nota={restaurante.nota}
-          id={restaurante.id}
-          infos={restaurante.infos}
-        />
-      ))}
-    </List>
-  </ContainerShops>
-)
+const getTags = (restaurants: RestaurantType) => {
+  const tags = []
+
+  if (restaurants.destacado) {
+    tags.push('Destaque da semana')
+  }
+
+  if (restaurants.tipo) {
+    tags.push(
+      restaurants.tipo.charAt(0).toUpperCase() + restaurants.tipo.slice(1)
+    )
+  }
+  return tags
+}
+
+const ShopList = ({ restaurants }: Props) => {
+  return (
+    <ContainerShops>
+      <List>
+        {restaurants.map((restaurante) => (
+          <Shop
+            key={restaurante.id}
+            type={restaurante.tipo}
+            name={restaurante.titulo}
+            description={restaurante.descricao}
+            image={restaurante.capa}
+            nota={restaurante.avaliacao}
+            id={restaurante.id}
+            infos={getTags(restaurante)}
+            destacado={restaurante.destacado}
+            cardapio={restaurante.cardapio}
+          />
+        ))}
+      </List>
+    </ContainerShops>
+  )
+}
 
 export default ShopList
