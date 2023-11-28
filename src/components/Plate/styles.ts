@@ -19,6 +19,22 @@ export const Card = styled.div`
     background-color: #000000;
     cursor: pointer;
   }
+
+  button {
+    background-color: ${cores.creme};
+    color: ${cores.vermelho};
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 0px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 8px;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
 
 export const Nome = styled.h3`

@@ -1,4 +1,3 @@
-// import Restaurant from '../../models/Restaurant'
 import { RestaurantType } from '../../pages/Home'
 import Shop from '../Shop'
 

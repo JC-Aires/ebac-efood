@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/reducers/cart'
 
 import {
   Descricao,
@@ -9,10 +12,11 @@ import {
   ModalContent
 } from './styles'
 
-import close from '../../assets/images/close.png'
-import { ButtonAdd, ButtonCar } from '../Button/styles'
+import { ButtonCar } from '../Button/styles'
 
 import { MenuItemsType } from '../../pages/Perfil'
+
+import close from '../../assets/images/close.png'
 
 type Props = {
   name: string
@@ -21,7 +25,7 @@ type Props = {
   preco: number
   porcao: string
   id: number
-  menu?: MenuItemsType
+  menu: MenuItemsType
 }
 
 export const formataPreco = (preco = 0) => {
@@ -39,34 +43,41 @@ export function shortenText(text: string): string {
   return shortenedText
 }
 
-const Plate = ({ name, description, image, porcao, preco }: Props) => {
+const Plate = ({ name, description, image, porcao, preco, menu }: Props) => {
   const [modalEstaAberto, setModalEstaAberto] = useState(false)
-  const [modalUrl, setModalUrl] = useState('')
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(menu))
+    dispatch(open())
+    setModalEstaAberto(false)
+  }
+
   return (
     <>
       <Card
         onClick={() => {
           setModalEstaAberto(true)
-          setModalUrl(image)
         }}
       >
         <img src={image} alt={name} />
         <Nome>{name}</Nome>
         <Descricao>{shortenText(`${description}`)}</Descricao>
-        <ButtonAdd type={'link'} to={'/perfil'} title={'name'}>
-          Adicionar ao carrinho
-        </ButtonAdd>
+        <button>Mais detalhes</button>
       </Card>
       <Modal className={modalEstaAberto ? 'visivel' : ''}>
         <ModalContent className="container">
-          <img src={modalUrl} alt="" />
+          <img src={image} alt="" />
           <TextContainer>
             <p>{name}</p>
             <div>
               {description} <br /> <br />
               Serve: {porcao}
             </div>
-            <ButtonCar>Adicionar ao carrinho - {formataPreco(preco)}</ButtonCar>
+            <ButtonCar onClick={addToCart}>
+              Adicionar ao carrinho - {formataPreco(preco)}
+            </ButtonCar>
             <img
               className="fechar"
               src={close}

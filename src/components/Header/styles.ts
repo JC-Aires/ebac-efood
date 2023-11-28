@@ -13,6 +13,10 @@ export const Fundo = styled.div`
     font-size: 18px;
     font-weight: 900;
     line-height: 21px;
+
+    &.carrinho {
+      cursor: pointer;
+    }
   }
 
   img {

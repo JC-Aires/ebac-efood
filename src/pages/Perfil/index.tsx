@@ -1,12 +1,12 @@
-import pizza from '../../assets/images/pizza.png'
-import massa from '../../assets/images/massa.png'
+import { useParams } from 'react-router-dom'
+
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
 import { Container } from '../../styles'
-import Food from '../../models/Food'
+
 import PlateList from '../../components/PlateList'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+
+import { useGetMenuQuery, useGetRestaurantIdQuery } from '../../services/api'
 
 export type MenuItemsType = {
   foto: string
@@ -15,6 +15,7 @@ export type MenuItemsType = {
   nome: string
   descricao: string
   porcao: string
+  menu: string[]
 }
 
 export type MenuType = {
@@ -55,31 +56,23 @@ export type MenuType = {
 // ]
 
 const Perfil = () => {
-  const [menuState, setMenuState] = useState<MenuItemsType[]>([])
-  const [restaurantState, setRestaurantState] = useState<MenuType>(
-    {} as MenuType
-  )
-
   const { id } = useParams()
+  const { data: menuState } = useGetMenuQuery(id!)
+  const { data: shopState } = useGetRestaurantIdQuery(id!)
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setMenuState(res.cardapio)
-        setRestaurantState(res)
-      })
-  }, [id])
+  if (menuState && shopState) {
+    return (
+      <>
+        <Header />
+        <Banner restaurant={shopState} />
+        <Container>
+          <PlateList foods={menuState} />
+        </Container>
+      </>
+    )
+  }
 
-  return (
-    <>
-      <Header />
-      <Banner restaurant={restaurantState} />
-      <Container>
-        <PlateList foods={menuState} />
-      </Container>
-    </>
-  )
+  return <h3>Carregando...</h3>
 }
 
 export default Perfil

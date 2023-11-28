@@ -1,7 +1,6 @@
 import Plate from '../Plate'
-import { MenuItemsType } from '../../pages/Perfil'
-
 import { ContainerShops, List } from './styles'
+import { MenuItemsType } from '../../pages/Perfil'
 
 type Props = {
   foods: MenuItemsType[]
@@ -21,6 +20,7 @@ const PlateList = ({ foods }: Props) => {
               preco={comida.preco}
               porcao={comida.porcao}
               id={comida.id}
+              menu={comida}
             />
           ))}
         </List>
