@@ -42,4 +42,5 @@ export const ButtonCar = styled.button`
   font-weight: 700;
   padding: 4px 7px;
   border: none;
+  cursor: pointer;
 `

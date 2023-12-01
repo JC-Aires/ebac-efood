@@ -14,6 +14,7 @@ const Hero = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
+    if (items.length === 0) return alert('Seu carrinho está vazio')
     dispatch(open())
   }
 

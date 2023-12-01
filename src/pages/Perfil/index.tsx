@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom'
 
+import { useGetMenuQuery, useGetRestaurantIdQuery } from '../../services/api'
+
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
-import { Container } from '../../styles'
-
 import PlateList from '../../components/PlateList'
 
-import { useGetMenuQuery, useGetRestaurantIdQuery } from '../../services/api'
+import { Container } from '../../styles'
 
 export type MenuItemsType = {
   foto: string

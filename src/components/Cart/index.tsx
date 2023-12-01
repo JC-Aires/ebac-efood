@@ -1,16 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Overlay, CartContainer, Sidebar, Prices, CartItem } from './styles'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
-import { formataPreco } from '../Plate'
+import { openDelivery } from '../../store/reducers/delivery'
 
+import { formataPreco } from '../Plate'
+import { Overlay, CartContainer, Sidebar, Prices, CartItem } from './styles'
 import lixeira from '../../assets/images/lixeira.png'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
   const dispatch = useDispatch()
+
+  const goToDelivery = () => {
+    dispatch(openDelivery())
+  }
 
   const closeCart = () => {
     dispatch(close())
@@ -51,7 +56,7 @@ const Cart = () => {
           <span>Valor total</span>
           <span>{formataPreco(getTotalPrice())}</span>
         </Prices>
-        <button>Continuar com a entrega</button>
+        <button onClick={goToDelivery}>Continuar com a entrega</button>
       </Sidebar>
     </CartContainer>
   )
