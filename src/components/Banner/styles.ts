@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const ImageHeader = styled.div`
   width: 100%;
@@ -13,20 +13,34 @@ export const ImageHeader = styled.div`
     filter: brightness(0.5);
   }
 `
-
-export const Tipo = styled.div`
+export const Container = styled.div`
   position: absolute;
   top: 25px;
-  left: 170px;
+  margin-left: calc((100vw - 1024px) / 2);
+  text-align: left;
+  width: 1024px;
+  height: 280px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100vw;
+    margin-left: 10vw;
+  }
+`
+
+export const Tipo = styled.div`
+  // position: absolute;
+  // top: 25px;
+  // left: 170px;
   color: ${cores.branca};
   font-size: 32px;
   font-weight: 100;
+  margin-bottom: 156px;
 `
 
 export const ShopName = styled.div`
-  position: absolute;
-  top: 214px;
-  left: 170px;
+  // position: absolute;
+  // top: 214px;
+  // left: 170px;
   color: ${cores.branca};
   font-size: 32px;
   font-weight: 900;

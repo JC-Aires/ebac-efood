@@ -27,6 +27,7 @@ import {
   Row,
   Sidebar
 } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 const Order = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
@@ -44,19 +45,52 @@ const Order = () => {
     return hasError
   }
 
-  const initOrder = () => {
-    dispatch(openOrder())
-  }
   const endDelivery = () => {
     dispatch(closeDelivery())
   }
 
   const startPayment = () => {
-    dispatch(openPayment())
+    const nome = document.getElementById('nome') as HTMLInputElement
+    const endereco = document.getElementById('endereco') as HTMLInputElement
+    const cidade = document.getElementById('cidade') as HTMLInputElement
+    const cep = document.getElementById('cep') as HTMLInputElement
+    const numero = document.getElementById('numero') as HTMLInputElement
+
+    if (
+      nome.value === '' ||
+      endereco.value === '' ||
+      cidade.value === '' ||
+      cep.value === '' ||
+      numero.value === ''
+    ) {
+      alert('Os campos em destaque são obrigatórios!')
+    } else {
+      dispatch(openPayment())
+    }
   }
 
   const endPayment = () => {
     dispatch(closePayment())
+  }
+
+  const initOrder = () => {
+    const cardName = document.getElementById('cardName') as HTMLInputElement
+    const cardNumber = document.getElementById('cardNumber') as HTMLInputElement
+    const cvv = document.getElementById('cvv') as HTMLInputElement
+    const month = document.getElementById('month') as HTMLInputElement
+    const year = document.getElementById('year') as HTMLInputElement
+
+    if (
+      cardName.value === '' ||
+      cardNumber.value === '' ||
+      cvv.value === '' ||
+      month.value === '' ||
+      year.value === ''
+    ) {
+      alert('O preenchimento de todos os campos é obrigatório!')
+    } else {
+      dispatch(openOrder())
+    }
   }
 
   const endOrder = () => {
@@ -71,6 +105,8 @@ const Order = () => {
       dispatch(clear())
     }
   }, [isSuccess, dispatch])
+
+  const navigate = useNavigate()
 
   const getTotalPrice = () => {
     return items.reduce((acumulador, valorAtual) => {
@@ -191,7 +227,15 @@ const Order = () => {
               </p>
 
               <ButtonContainer>
-                <button onClick={endOrder}>Concluir</button>
+                <button
+                  onClick={() => {
+                    endOrder()
+                    navigate('/')
+                    navigate(0)
+                  }}
+                >
+                  Concluir
+                </button>
               </ButtonContainer>
             </Container>
           </Sidebar>

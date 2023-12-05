@@ -1,13 +1,19 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
-export const Fundo = styled.div`
-  width: 100%;
-  height: 162px;
-  margin: 0 auto;
-  text-align: center;
+export const Fundo = styled.header`
+  height: 163px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+`
+
+export const Container = styled.div`
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+  height: 58px;
+  margin-top: 40px;
 
   p {
     font-size: 18px;
@@ -22,5 +28,19 @@ export const Fundo = styled.div`
   img {
     height: 57.5px;
     width: 125px;
+
+    margin-left: 88px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin: 8px;
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 `

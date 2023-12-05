@@ -24,37 +24,6 @@ export type MenuType = {
   capa: string
 }
 
-// const menu: Food[] = [
-//   {
-//     name: 'Pizza Marguerita',
-//     description:
-//       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-//     image: pizza,
-//     id: 1
-//   },
-//   {
-//     name: 'Pizza Marguerita',
-//     description:
-//       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-//     image: massa,
-//     id: 2
-//   },
-//   {
-//     name: 'Pizza Marguerita',
-//     description:
-//       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-//     image: pizza,
-//     id: 3
-//   },
-//   {
-//     name: 'Pizza Marguerita',
-//     description:
-//       'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-//     image: pizza,
-//     id: 3
-//   }
-// ]
-
 const Perfil = () => {
   const { id } = useParams()
   const { data: menuState } = useGetMenuQuery(id!)

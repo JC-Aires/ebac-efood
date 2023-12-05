@@ -242,7 +242,7 @@ export const OrderContainer = styled.div`
 export const DeliveryPaymentContainer = styled.div`
   input {
     &.error {
-      border: 3px solid red;
+      border: 3px solid #000;
     }
   }
 `

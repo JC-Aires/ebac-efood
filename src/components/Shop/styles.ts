@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.branca};
@@ -9,10 +9,22 @@ export const Card = styled.div`
   display: grid;
   position: relative;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    margin: 24px auto;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80vw;
+  }
+
   img {
     width: 100%;
     height: 216px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 80vw;
+    }
   }
 `
 
@@ -32,6 +44,10 @@ export const Container = styled.div`
   height: 206px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80vw;
+  }
 `
 
 export const TituloContainer = styled.div`
@@ -47,6 +63,10 @@ export const Descricao = styled.p`
   font-weight: 400;
   line-height: 22px;
   margin: 16px 8px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    line-height: 16px;
+  }
 `
 
 export const Nota = styled.div`

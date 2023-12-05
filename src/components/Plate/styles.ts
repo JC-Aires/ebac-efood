@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Card = styled.div`
   background-color: ${cores.vermelho};
@@ -89,11 +89,29 @@ export const ModalContent = styled.div`
   padding: 32px;
   background-color: ${cores.vermelho};
 
+  @media (max-width: ${breakpoints.desktop}) {
+    max-height: 90vh;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
   img {
     width: 280px;
     height: 280px;
     margin-right: 24px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 80%;
+      height: 80%;
+      margin: 16px auto;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) and (min-width: ${breakpoints.tablet}) {
+      width: 90%;
+      margin: 16px auto;
+    }
   }
 
   .fechar {
@@ -103,10 +121,20 @@ export const ModalContent = styled.div`
     top: 8px;
     right: -16px;
     cursor: pointer;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      right: 16px;
+      top: 0;
+    }
   }
 `
 
 export const TextContainer = styled.div`
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-left: 32px;
+    height: 100%;
+  }
+
   p {
     display: flex;
     color: ${cores.branca};
@@ -124,6 +152,10 @@ export const TextContainer = styled.div`
     line-height: 22px;
     margin-bottom: 16px;
     margin-right: 32px;
+
+    @media (max-width: ${breakpoints.desktop}) and (min-width: ${breakpoints.tablet}) {
+      font-size: 18px;
+    }
 
   button {
     // width: 230px;

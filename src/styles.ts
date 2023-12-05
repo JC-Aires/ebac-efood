@@ -7,6 +7,12 @@ export const cores = {
   bege: '#FFF8F2'
 }
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px',
+  mobile: '480px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;
@@ -18,12 +24,6 @@ export const GlobalCss = createGlobalStyle`
   body {
     background-color: ${cores.bege};
     color: ${cores.vermelho};
-  }
-
-  .container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
   }
 `
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Fundo } from './styles'
+import { Container, Fundo } from './styles'
 import vectorFundo from '../../assets/images/vectorFundo.png'
 import logo from '../../assets/images/logo_efood.svg'
 
@@ -20,13 +20,15 @@ const Hero = () => {
 
   return (
     <Fundo style={{ backgroundImage: `url(${vectorFundo})` }}>
-      <p>Restaurantes</p>
-      <Link to="/">
-        <img src={logo} alt="EFOOD" />
-      </Link>
-      <p className="carrinho" onClick={openCart}>
-        {items.length} produto(s) no carrinho
-      </p>
+      <Container>
+        <p>Restaurantes</p>
+        <Link to="/">
+          <img src={logo} alt="EFOOD" />
+        </Link>
+        <p className="carrinho" onClick={openCart}>
+          {items.length} produto(s) no carrinho
+        </p>
+      </Container>
     </Fundo>
   )
 }

@@ -1,4 +1,4 @@
-import { ImageHeader, ShopName, Tipo } from './styles'
+import { Container, ImageHeader, ShopName, Tipo } from './styles'
 import { MenuType } from '../../pages/Perfil'
 
 type Props = {
@@ -8,12 +8,12 @@ type Props = {
 const Banner = ({ restaurant }: Props) => (
   <ImageHeader>
     <img src={restaurant.capa} alt="Imagem header" />
-    <div className="container">
+    <Container>
       <Tipo>
         {restaurant?.tipo?.charAt(0).toUpperCase() + restaurant?.tipo?.slice(1)}
       </Tipo>
       <ShopName>{restaurant.titulo}</ShopName>
-    </div>
+    </Container>
   </ImageHeader>
 )
 
