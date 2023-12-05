@@ -28,9 +28,6 @@ export const Container = styled.div`
 `
 
 export const Tipo = styled.div`
-  // position: absolute;
-  // top: 25px;
-  // left: 170px;
   color: ${cores.branca};
   font-size: 32px;
   font-weight: 100;
@@ -38,9 +35,6 @@ export const Tipo = styled.div`
 `
 
 export const ShopName = styled.div`
-  // position: absolute;
-  // top: 214px;
-  // left: 170px;
   color: ${cores.branca};
   font-size: 32px;
   font-weight: 900;
